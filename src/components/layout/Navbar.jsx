@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../styles/navbar.scss'
 import ScissorsIcon from '../../icons/Scissors'
+// Route Link
+import { NavLink } from 'react-router-dom'
 
 export default () => {
 
@@ -23,9 +25,9 @@ export default () => {
 			</div>
 			<nav >
 				<ul className={isOpenMenu ? "activeMenu" : ""}>
-					<li><a href="/">Home</a></li>
-					<li><a href="/">About Us</a></li>
-					<li><a href="/">Pricing</a></li>
+					<li><NavLink to="/" >Home</NavLink></li>
+					<li><NavLink to="/barbers" >Barbers</NavLink></li>
+					<li><NavLink to="/pricing">Pricing</NavLink></li>
 					<li><a href="/">Gallery</a></li>
 					<li><a href="/">Contact</a></li>
 				</ul>

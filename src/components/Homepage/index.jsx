@@ -12,17 +12,11 @@ import HaircutServiceImage from '../../images/haircut.webp'
 import BeardServiceimage from '../../images/beard.webp'
 import WashServiceimage from '../../images/wash.webp'
 import HotTowelServiceimage from '../../images/hottowel.webp'
-// gsap
-import gsap from 'gsap'
-import { Power3 } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-// styles 
+// 
+import { animationHandler } from '../../utils'
+// 
 import './homepage.scss'
-// Lazyload components
 
-
-
-gsap.registerPlugin( ScrollTrigger )
 
 // JSX
 export default () => {
@@ -48,6 +42,7 @@ export default () => {
 		meetRightRef3,
 	]
 
+
 	// METHODS
 	const mobileScreen = () => {
 		if (window.innerWidth <= 568 ) return true
@@ -55,34 +50,21 @@ export default () => {
 
 	const loader = () => (<p>Loading...</p>)
 
-	useEffect( () => {
-		// LEFT ANIMATIONS
-		leftAnimationsRefsArray.forEach( reference => {
-			ScrollTrigger.create({
-				trigger: reference.current,
-				animation: gsap.from( reference.current, { x: "-200%"}),
-				start: "center 100%"
-			})
-		})
-		// RIGHT ANIMATIONS
-		rightAnimationsRefArray.forEach( reference => {
-			ScrollTrigger.create({
-				trigger: reference.current,
-				animation: gsap.from( reference.current, {x: "200%"}),
-				start: "center 100%"
-			})
-		})
+	const boolean = true 
 
+	useEffect( () => {
+		animationHandler.left( leftAnimationsRefsArray, boolean )
+		animationHandler.right( rightAnimationsRefArray, boolean )
 	}, [])
 
 		
 	// JSX
 	return(
-		<Layout>
+		<>
 			<HeroSection />
 			<div className="meet">
 				<div className="meet-left" ref={meetLeftRef}>
-					<h1>Meet Me</h1>
+					<h1>Meet Us</h1>
 					<h4>and my passion</h4>
 					<p>
 						I have been working on hair styling for 2 years in Aberdeeen.I use only professional and brand products Wella in my salon. Haircuts, blow dry,colouring, hairstyling,full head tint, highlights are performed in Passion for Beauty at 76 Rosemount Viaduct, AB25 1NU Aberdeen. We will supply you with wonderful atmosphere. My partner Lucy will take professional care of your nails, eyebrows and eyelashes.While listening to relaxing music and having a nice cup of coffee you will relax and feel wonderful, I would say " You will be over the moon."I would like to invite you to my beauty salon. I will give you free advice about your hair.
@@ -107,10 +89,10 @@ export default () => {
 				<h1>Offer</h1>
 				<p>Discover our service</p>
 				<CardContainer>
-					<Card image={HaircutServiceImage} service="haircut" price="22-50" reff={meetLeftRef2} />
-					<Card image={BeardServiceimage} service="beard trim" price="22-50" reff={meetRightRef2} />
-					<Card image={WashServiceimage} service="wash & style" price="22-50"  reff={meetLeftRef3} />
-					<Card image={HotTowelServiceimage} service="hot towel shave" price="22-50" reff={meetRightRef3} />
+					<Card image={HaircutServiceImage} service="haircut" price="£22-50" reff={meetLeftRef2} />
+					<Card image={BeardServiceimage} service="beard trim" price="£22-50" reff={meetRightRef2} />
+					<Card image={WashServiceimage} service="wash & style" price="£22-50"  reff={meetLeftRef3} />
+					<Card image={HotTowelServiceimage} service="hot towel shave" price="£22-50" reff={meetRightRef3} />
 				</CardContainer>
 
 				<div className="offer-more">
@@ -120,6 +102,6 @@ export default () => {
 					/>
 				</div>
 			</div>
-		</Layout>
+		</>
 	)
 }

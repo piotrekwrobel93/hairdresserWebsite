@@ -1,0 +1,42 @@
+@import '../../../styles/variables';
+
+.barber {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	margin-bottom: 4rem;
+
+	.barber__hero {
+		width: 100%;
+		min-height: 200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h1 {
+			font-size: $fsLarge - 2rem ;
+		}
+	}
+
+	.barber__button {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media ( max-width: 460px ) {
+	.barber {
+		.barber__hero {
+			min-height: 130px;
+			h1 {
+				font-size: $fsMedium;
+			}
+		}
+		.barber__button {
+			margin: 2rem 0;
+		}
+	}
+}
