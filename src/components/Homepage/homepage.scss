@@ -1,0 +1,71 @@
+@import '../../styles/variables';
+
+.meet {
+	display: flex;
+	margin-bottom: 5rem;
+	.meet-left{
+		width: 50%;
+		h1{
+			font-size: $fsMedium + 1rem;
+			margin: 1rem 0 0 0;
+		}
+		p{
+			position: relative;
+			z-index: 9999;
+			margin: 2rem 0;
+			line-height: $lineheight;
+			font-size: 17px;
+		}
+		.meet-left-buttons {
+			display: flex;
+		}
+	}
+
+	.meet-right {
+		width: 50%;
+		margin-left: 2rem;
+		position: relative;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			box-shadow: 4px 4px 10px #333;
+			position: relative;
+			z-index: 999999;
+		}
+	}
+
+}
+
+
+.offer {
+	h1 { font-size: $fsMedium + 1rem;}
+	h1, p { text-align: center; }
+
+	.offer-more {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		margin-bottom: 6rem;
+	}
+}
+
+@media ( max-width: 768px ) {
+	.meet {
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		.meet-left {
+			width: 100%;
+		}
+		.meet-right {
+			width: 100%;
+			// height: 100%;
+			margin-left: 0;
+			margin-top: 5rem;
+			display: none;
+		}
+	}
+}
+

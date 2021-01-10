@@ -1,0 +1,45 @@
+// Font
+$fsLarge: 5rem;
+$fsMedium: 2rem;
+$fsSmall: 1.2rem;
+$fsXSmall: 1rem;
+$lineheight: 36px;
+
+// Margins, Paddings
+$pageMargin: 20%;
+
+
+
+// Global Colours
+$fColor: #222;
+$fColor2: #777;
+$accentColor: red;
+
+
+// Transitions
+$hoverTransition: all 0.1s ease-in-out;
+
+
+
+
+
+// Mixins 
+@mixin hoverEffectText {
+	color: $accentColor;
+	// border-bottom: 1px solid #000 !important;
+}
+
+@mixin headers {
+	font-size: $fsMedium;
+	font-weight: 500;
+}
+
+@mixin paragraph1 {
+	font-size: $fsXSmall;
+	color: $fColor2;
+	line-height: 28px;
+}
+
+@mixin logoSVG {
+	transform: rotateZ(-80deg);
+}

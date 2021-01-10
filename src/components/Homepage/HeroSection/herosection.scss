@@ -1,0 +1,141 @@
+@import '../../../styles/variables';
+
+.hero {
+	min-height: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding-top: 8rem;
+
+	h1 {
+		font-size: $fsLarge - 1rem;
+	}
+	 > p {
+		margin-top: 0rem;
+		margin-bottom: 2rem;
+		padding: 0.5rem 1rem;
+		position: relative;
+		// box-shadow: 0 0 10px 1px #777;
+		transition: $hoverTransition;
+		&:hover {
+			cursor: pointer;
+			// box-shadow: 0 0 5px 5px #999;
+			transform: scale(1.02);
+		}
+	}
+	p, p > a{
+		font-size: $fsMedium;
+		font-weight: 400;
+	}
+	p > a {
+		transition: $hoverTransition;
+		// color: $accentColor;
+		&::after {
+			content: "";
+			width: 100%;
+			height: 3px;
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			// background-color: $accentColor;
+		}
+	}
+	.hero-paragraph {
+		width: 100%;
+		position: relative;
+		padding: 3rem 0;
+
+		&::after {
+			content: "";
+			width: 50%;
+			height: 1px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #000;
+		}
+		&::before {
+			content: "";
+			width: 70%;
+			height: 1px;
+			position: absolute;
+			top: 10%;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #000;
+			margin-top: -0.5rem;
+
+		}
+		p {
+			font-size: $fsMedium - 0.5rem;
+		}
+	}
+	.scroll-down-arrow {
+		border-radius: 50%;
+		margin-bottom: 2rem;
+		cursor: pointer;
+		svg {
+			transform: rotateZ(90deg);
+		}
+	}
+	.hero-image{
+		width: 100vw;
+		height: 350px;
+		margin-bottom: 4rem;
+		background: url('../../../images/heroimage.webp');
+		background-position: left;
+		background-size: cover;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+	}
+}
+
+
+
+@media ( max-width: 768px ) {
+	.hero {
+		h1 {
+			font-size: $fsLarge - 1rem;
+		}
+
+		.hero-image {
+			background-position-x: 30%;
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+
+@media ( max-width: 568px ) {
+	.hero {
+		padding-top: 3rem;
+		h1 {
+			font-size: $fsLarge - 2.5rem;
+			margin-bottom: 2rem;
+		}
+		> p {
+			display: none;
+		}
+
+		.hero-paragraph {
+			padding: 1rem 0;
+			&::before {
+				display: none;
+			}
+			p {
+				margin-top: 2rem;
+				text-align: center;
+				margin-bottom: 2rem;
+				font-size: 20px;
+				line-height: $lineheight;
+			}
+		}
+		.scroll-down-arrow {
+			margin-top: 0;
+			display: none;
+		}
+	}
+}

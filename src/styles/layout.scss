@@ -1,0 +1,43 @@
+@import "./variables";
+
+
+.layout {
+	width: auto;
+	margin-left: $pageMargin;
+	margin-right: $pageMargin;
+	overflow: hidden;
+}
+
+
+
+
+// Media Queries
+
+
+@media ( max-width: 1400px ) {
+	.layout {
+		margin-left: $pageMargin / 2;
+		margin-right: $pageMargin / 2;
+	}
+}
+
+@media ( max-width: 1025px ) {
+	.layout {
+		margin-left: $pageMargin / 3;
+		margin-right: $pageMargin / 3;
+	}
+}
+
+@media ( max-width: 768px ){
+	.layout {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+}
+
+@media ( max-width: 481px ) {
+	.layout {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+	}
+}
