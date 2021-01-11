@@ -4,7 +4,7 @@ import './herosection.scss'
 import animateScrollTo from 'animated-scroll-to';
 
 
-export default function HeroSection() {
+export default React.memo(function HeroSection() {
 
 	const options = {
 		speed: 500,
@@ -36,4 +36,4 @@ export default function HeroSection() {
 			</div>
 		</div>
 	)
-}
+})
