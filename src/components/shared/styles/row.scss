@@ -29,3 +29,23 @@
 		justify-content: flex-end;
 	}
 }
+
+
+
+@media ( max-width: 550px ) {
+	.row {
+		padding-left: 0;
+		padding-right: 0;
+		h2 {
+			font-size: 0.9rem;
+		}
+		h2:nth-child(2) {
+			width: 50px;
+			// background-color: red;
+		}
+		h2:nth-child(3) {
+			width: 40px;
+			// background-color: green;
+		}
+	}
+}

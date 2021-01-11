@@ -18,12 +18,12 @@
 				font-size: $fsMedium;
 				font-weight: 400;
 				text-transform: uppercase;
+				&:nth-child(1) {
+					flex: 1;
 				}
-			h2:nth-child(1) {
-				flex: 1;
-			}
-			h2:nth-child(2){
-				margin-right: 4rem;
+				&:nth-child(2){
+					margin-right: 4rem;
+				}
 			}
 		}
 		.pricing--category {
@@ -39,6 +39,37 @@
 			}
 			margin: 1rem 0;
 		}
+		.pricing--button {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-self: center;
+			margin-top: 3rem;
+		}
 
+	}
+}
+
+
+@media ( max-width: 550px ) {
+	.pricing {
+		.pricing--list {
+			.pricing--list-items {
+				h2 {
+					font-size: $fsSmall;
+					&:nth-child(2) {
+						flex: 1;
+						margin-right: 0;
+					}
+				}	
+			}
+			.pricing--category {
+				h1 {
+					font-size: $fsSmall;
+					margin-bottom: 0;
+					padding-left: 0;
+				}
+			}
+		}
 	}
 }

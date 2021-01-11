@@ -1,7 +1,13 @@
+import React from 'react'
+
 import './pricing.scss'
+
 import Row from '../shared/Row'
+import Button from '../shared/Button'
+import Advert from '../shared/Advert'
 
 export default function Pricing() {
+
 
 
 	const haircutServices = [
@@ -34,9 +40,17 @@ export default function Pricing() {
 		{ id: 4, service: "Fashion + Shaving Lessons", duration: 60, price: 100 },
 	]
 
+	// JSX
+
 	return(
 		<div className="pricing">
 			<h1>Price List</h1>
+			<div className="pricing--advert" style={{width: "100%", display: "flex", justifyContent:"center", alignItems: 'center', margin: "3rem 0 4rem 0"}}>
+				<Advert 
+					title="Student Discount 15%!" 
+					description="You’re a student in the UK? Don’t forget to take advantage of our student discount!"				
+				/>
+			</div>
 			<div className="pricing--list">
 				<div className="pricing--list-items">
 					<h2>Service</h2>
@@ -75,8 +89,10 @@ export default function Pricing() {
 						))
 					}
 				</div>
+				<div className="pricing--button">
+					<Button value="Book an apointment" width={200} height={50} />
+				</div>
 			</div>
-
 		</div>
 	)
 }

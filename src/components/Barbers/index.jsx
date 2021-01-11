@@ -7,19 +7,19 @@ import './styles/barbers.scss'
 // 
 import {animationHandler } from '../../utils'
 // Dynamic imports
-import Eliza from '../../images/barbers/eliza.webp'
-import Patrick from '../../images/barbers/patrick.webp'
-import Louis from '../../images/barbers/louis.webp'
-import David from '../../images/barbers/david.webp'
+import Natalie from '../../images/barbers/natalie.webp'
+import Anna from '../../images/barbers/anna.webp'
+import Jamie from '../../images/barbers/jamie.webp'
+import Chris from '../../images/barbers/chris.webp'
 
 export default function Barber() { 
 		
 	
 	const barbers = [
-		{ id: 1, name: "David Patison", image: David, anim: 'left'  },
-		{ id: 2, name: "Louis Stugars", image: Louis , anim: 'right'},
-		{ id: 3, name: "Patrick Dayne", image: Patrick, anim: 'left'},
-		{ id: 4, name: "Eliza Petra", image: Eliza, anim: 'right'}
+		{ id: 1, name: "Anna Patison", image: Anna, anim: 'left'  },
+		{ id: 2, name: "Jamie Stugars", image: Jamie , anim: 'right'},
+		{ id: 3, name: "Natalie Dayne", image: Natalie, anim: 'left'},
+		{ id: 4, name: "Chris Petra", image: Chris, anim: 'right'}
 	]
 	
 	
