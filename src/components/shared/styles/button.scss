@@ -10,7 +10,6 @@
 	outline-width: 0;
 	position: relative;
 	z-index: 99;
-	// border: 2px solid transparent;
 	cursor: pointer;
 	overflow: hidden;
 
@@ -25,7 +24,7 @@
 		position: absolute;
 		top: -250%;
 		left: -6%;
-		background-color: #fff; //$accentColor
+		background-color: #fff; 
 		transform: rotate(-10deg);
 		transition: all .3s cubic-bezier(.72,.69,0,.61);
 	}
@@ -49,7 +48,6 @@
 		z-index: 100;
 		visibility: hidden;
 		transition: all .1s ease-in;
-		// transform: skew(10deg,10deg);
 	}
 	&:hover::before{
 		top: 50%;

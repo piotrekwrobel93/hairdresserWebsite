@@ -1,5 +1,4 @@
 import gsap from 'gsap'
-import { Power3 } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin( ScrollTrigger )
 

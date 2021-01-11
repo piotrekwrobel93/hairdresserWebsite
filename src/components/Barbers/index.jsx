@@ -1,5 +1,4 @@
-import React, { lazy, Suspense } from 'react'
-import Layout from '../layout'
+import React  from 'react'
 import Card from '../shared/Card'
 import CardContainer from '../shared/CardContainer'
 import Button from '../shared/Button'
@@ -13,9 +12,8 @@ import Patrick from '../../images/barbers/patrick.webp'
 import Louis from '../../images/barbers/louis.webp'
 import David from '../../images/barbers/david.webp'
 
-export default () => {
-
-	
+export default function Barber() { 
+		
 	
 	const barbers = [
 		{ id: 1, name: "David Patison", image: David, anim: 'left'  },
@@ -44,9 +42,9 @@ export default () => {
 					{
 						barbers.map( barber => (
 							<Card key={barber.id} image={ barber.image } service={ barber.name } className={barber.anim} />
-						))
-						
-					}
+							))
+							
+						}
 				</CardContainer>
 			</div>
 			<div className="barber__button">

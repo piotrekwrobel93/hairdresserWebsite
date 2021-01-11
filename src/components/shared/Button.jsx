@@ -1,6 +1,6 @@
 import './styles/button.scss'
 
-export default function({value, width, height}){
+export default function Button({value, width, height}){
 	return(
 		<button className="button" style={{
 			width: width || "100px",

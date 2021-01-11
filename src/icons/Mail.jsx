@@ -1,4 +1,4 @@
-export default ({ width, height }) => {
+export default function Mail({ width, height }) {
 
 	return(
 		

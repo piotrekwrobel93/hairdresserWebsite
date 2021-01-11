@@ -5,7 +5,7 @@ import '../../styles/layout.scss'
 import Footer from './Footer'
 
 
-export default ({ children }) => {
+export default function Layout({ children }) {
 	return(
 			<div className="layout">
 				<Navbar />

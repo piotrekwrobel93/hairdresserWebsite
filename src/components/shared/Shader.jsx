@@ -1,4 +1,4 @@
-export default function({ opacity, zindex, children }) {
+export default function Shader({ opacity, zindex, children }) {
 
 	return (
 		<div style={{

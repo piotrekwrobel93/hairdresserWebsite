@@ -1,8 +1,7 @@
 import './pricing.scss'
-import Layout from '../layout'
 import Row from '../shared/Row'
 
-export default () => {
+export default function Pricing() {
 
 
 	const haircutServices = [
@@ -20,7 +19,6 @@ export default () => {
 		{ id: 2, service:  "Express Shave", duration: 30, price: 30 },
 		{ id: 3, service:  "Shaving Lesson", duration: 60, price: 80 },
 	]
-
 
 	const beardServices = [
 		{ id: 1, service: "Beard Styling", duration: 15, price: 15 },

@@ -8,7 +8,7 @@ import  Facebook from '../../icons/Facebook'
 import  Instagram from '../../icons/Instagram'
 import Maps from '../shared/Maps'
 
-export default  () => {
+export default function Footer() {
 
 	return (
 		<div className="footer">

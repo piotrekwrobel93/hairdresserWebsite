@@ -1,6 +1,5 @@
-import React, { useRef, useState, useEffect, lazy, Suspense } from 'react'
+import React, { useRef, useEffect, } from 'react'
 // Custom
-import Layout from '../layout'
 import Button from '../shared/Button'
 import HeroSection from './HeroSection'
 import Shader from '../shared/Shader'
@@ -19,7 +18,7 @@ import './homepage.scss'
 
 
 // JSX
-export default () => {
+export default function Homepage(){
 
 	// ANIMATION REFS
 	const meetLeftRef = useRef( null )
@@ -48,14 +47,13 @@ export default () => {
 		if (window.innerWidth <= 568 ) return true
 	}
 
-	const loader = () => (<p>Loading...</p>)
 
 	const boolean = true 
 
 	useEffect( () => {
 		animationHandler.left( leftAnimationsRefsArray, boolean )
 		animationHandler.right( rightAnimationsRefArray, boolean )
-	}, [])
+	})
 
 		
 	// JSX

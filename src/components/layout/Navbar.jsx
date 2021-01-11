@@ -4,7 +4,7 @@ import ScissorsIcon from '../../icons/Scissors'
 // Route Link
 import { NavLink } from 'react-router-dom'
 
-export default () => {
+export default function Navbar() {
 
 	const [ isOpenMenu, setIsOpenMenu ] = React.useState( false )
 

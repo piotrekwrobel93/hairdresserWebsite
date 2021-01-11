@@ -4,7 +4,7 @@ import './herosection.scss'
 import animateScrollTo from 'animated-scroll-to';
 
 
-export default () => {
+export default function HeroSection() {
 
 	const options = {
 		speed: 500,

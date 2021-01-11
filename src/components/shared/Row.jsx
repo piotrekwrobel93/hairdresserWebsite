@@ -1,5 +1,5 @@
 import './styles/row.scss'
-export default ({service, duration, price}) => {
+export default function Row({service, duration, price}) {
 	return (
 		<div className="row">
 			<h2>{service}</h2>

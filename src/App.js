@@ -12,7 +12,7 @@ import Layout from './components/layout'
 
 // Lazy Components
 const Barber = lazy( () => import('./components/Barbers') )
-const Prices = lazy( () => import('./components/Pricing') )
+const Pricing = lazy( () => import('./components/Pricing') )
 
 
 
@@ -22,21 +22,13 @@ const App = () => {
 		<Router>
 			<Layout>
 				<div className="app" >
+				<Suspense fallback={<p>Loading......</p>}>
 					<Switch>
-						<Route exact path="/">
-							<HomePage />
-						</Route>
-						<Route path="/barbers">
-							<Suspense fallback={<p>Loading...</p>} >
-								<Barber />
-							</Suspense>
-						</Route>
-						<Route path="/pricing">
-							<Suspense fallback={ <p>Loading...</p>}>
-								<Prices />
-							</Suspense>
-						</Route>
+						<Route exact path="/" component={HomePage} />
+						<Route path="/barbers" component={Barber} />
+						<Route path="/pricing" component={Pricing}/>
 					</Switch>
+				</Suspense>
 				</div>
 			</Layout>
 		</Router>
