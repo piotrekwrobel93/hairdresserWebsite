@@ -8,10 +8,10 @@ import './styles/barbers.scss'
 // 
 import {animationHandler } from '../../utils'
 // Dynamic imports
-import Eliza from '../../images/barbers/eliza.jpg'
-import Patrick from '../../images/barbers/patrick.jpg'
-import Louis from '../../images/barbers/louis.jpg'
-import David from '../../images/barbers/david.jpg'
+import Eliza from '../../images/barbers/eliza.webp'
+import Patrick from '../../images/barbers/patrick.webp'
+import Louis from '../../images/barbers/louis.webp'
+import David from '../../images/barbers/david.webp'
 
 export default () => {
 
