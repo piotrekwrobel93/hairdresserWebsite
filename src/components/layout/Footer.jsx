@@ -8,7 +8,7 @@ import  Facebook from '../../icons/Facebook'
 import  Instagram from '../../icons/Instagram'
 import Maps from '../shared/Maps'
 
-export default function Footer() {
+export default  React.memo( function Footer() {
 
 	return (
 		<div className="footer">
@@ -63,4 +63,4 @@ export default function Footer() {
 			</div>
 		</div>
 	)
-}
+})

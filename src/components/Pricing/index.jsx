@@ -6,7 +6,7 @@ import Row from '../shared/Row'
 import Button from '../shared/Button'
 import Advert from '../shared/Advert'
 
-export default function Pricing() {
+export default React.memo( function Pricing() {
 
 
 
@@ -95,4 +95,4 @@ export default function Pricing() {
 			</div>
 		</div>
 	)
-}
+})

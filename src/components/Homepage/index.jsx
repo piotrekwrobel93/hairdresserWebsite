@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, } from 'react'
+import React, { useRef, useEffect, lazy, Suspense } from 'react'
 // Custom
 import Button from '../shared/Button'
 import HeroSection from './HeroSection'
@@ -6,19 +6,22 @@ import Shader from '../shared/Shader'
 import CardContainer from '../shared/CardContainer'
 import Card from '../shared/Card'
 // Images
-import hairdresser1 from '../../images/hairdresser1.webp'
+import Hairdresser1 from '../../images/hairdresser1.webp'
 import HaircutServiceImage from '../../images/haircut.webp'
 import BeardServiceimage from '../../images/beard.webp'
-import WashServiceimage from '../../images/wash.webp'
+import WashServiceimage from '../../images/hairwash.webp'
 import HotTowelServiceimage from '../../images/hottowel.webp'
+
 // 
 import { animationHandler } from '../../utils'
 // 
 import './homepage.scss'
 
 
+
+
 // JSX
-export default function Homepage(){
+export default React.memo( function Homepage(){
 
 	// ANIMATION REFS
 	const meetLeftRef = useRef( null )
@@ -50,6 +53,7 @@ export default function Homepage(){
 
 	const boolean = true 
 
+
 	useEffect( () => {
 		animationHandler.left( leftAnimationsRefsArray, boolean )
 		animationHandler.right( rightAnimationsRefArray, boolean )
@@ -78,10 +82,12 @@ export default function Homepage(){
 						/>
 					</div>
 				</div>
-				<div className="meet-right" ref={meetRightRef}>
-					<Shader opacity={0.3}/>
-					<img src={hairdresser1} alt="Hairdresser" />
-				</div>
+				<Suspense fallback={<p>Loading...</p>}>
+					<div className="meet-right" ref={meetRightRef}>
+						<Shader opacity={0.3}/>
+						<img src={ Hairdresser1 } alt="Hairdresser" />
+					</div>
+				</Suspense>
 			</div>
 			<div className="offer">
 				<h1>Offer</h1>
@@ -102,4 +108,4 @@ export default function Homepage(){
 			</div>
 		</>
 	)
-}
+})
