@@ -2,11 +2,11 @@
 
 .navbar{
 	width: 100%;
-	height: 100px;
 	display: flex;
 	align-items: center;
 	position: relative;
 	background-color: #fff;
+	padding: 1rem 0;
 	&::after{
 		content: "";
 		position: absolute;
@@ -20,21 +20,25 @@
 	.logo {
 		width: auto;
 		display: flex;
-		align-items: center;
 		min-width: 300px;
-		p {
-			font-size: $fsMedium; 
-			font-weight: 800;
-			margin-left: 2px;
-			text-transform: uppercase;
-			position: relative;
-		}
-		svg {
-			@include logoSVG;
-			path {
-				fill: $accentColor;
-
+		a {
+			display: flex;
+			align-items: center;
+			p {
+				font-size: $fsMedium; 
+				font-weight: 800;
+				margin-left: 2px;
+				text-transform: uppercase;
+				position: relative;
 			}
+			svg {
+				@include logoSVG;
+				path {
+					fill: $accentColor;
+	
+				}
+			}
+
 		}
 	}
 	.navbar__toggle {
@@ -83,20 +87,9 @@
 			li {
 				padding-right: 1rem;
 				padding-left: 1rem;
-				border: 1px solid transparent;
-				transition: $hoverTransition;
-				&:hover {
-					border: 1px solid red;
-					transform: scale(1.02);
-					a{
-						font-weight: 600;
-						color: $accentColor;
-					}
-				}
-
 				a {
 					color: $fColor;
-					transition: $hoverTransition;
+					padding: 0.2em .5em,
 				}
 			}
 			
@@ -104,7 +97,6 @@
 	}
 }
 
-//  TOGGLE CLASS FOR <NAVLINK />
 
 
 
@@ -132,15 +124,28 @@
 
 	.navbar{
 		flex-direction: column;
+		position: static;
+		padding: 0;
+		&::after{ display: none;}
 		.logo {
-			flex: 1;
+			a{
+				width: 30%;
+				text-align: center;
+				align-self: center;
+				justify-self: center;
+				flex: 1;
+				margin: 1rem 0;
+			}
 		}
 		.navbar__toggle {
 			display: block;
 			position: absolute;
+			justify-self: flex-end;
+			align-self: flex-end;
 			right: 5%;
-			top: 50%;
+			top: 4%;
 			transform: translateY(-50%);
+			z-index: 9999;
 		}
 		nav {
 			display: flex;
@@ -153,7 +158,7 @@
 				-o-transition: all 0.4s ease-in-out;
 				transition: all 0.4s ease-in-out;
 				width: 100%;
-				display: block;
+				display: flex;
 				flex-direction: column;
 				align-self: flex-start;
 				margin-bottom: 0.5rem;
@@ -182,12 +187,15 @@
 	.navbar{
 		.logo{
 			min-width: 250px;
-			p{
-				font-size: 27px;
+			a {
+				p{
+					font-size: 27px;
+				}
+
 			}
 		}
 		.navbar__toggle{
-			right: 0%;
+			top: 4%;
 			button{
 				width: 40px;
 				height: 35px;

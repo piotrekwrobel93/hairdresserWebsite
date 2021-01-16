@@ -2,7 +2,7 @@ import React from 'react'
 import '../../styles/navbar.scss'
 import ScissorsIcon from '../../icons/Scissors'
 // Route Link
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 export default React.memo(function Navbar() {
 
@@ -11,36 +11,39 @@ export default React.memo(function Navbar() {
 
 
 	React.useEffect( () => {
-		console.log("... Navbar is being rendered ...")
-	})
+		console.log("component mounted")
+	},[])
 
 	const activeStyles = {
-		color: "red",
-		fontWeight: "600"
+		fontWeight: "600",
+		border:"2px solid #333",
+		color: "#000"
 	}
 
 	return(
 		<div className="navbar">
 			<div className="logo">
-				<ScissorsIcon width={30} height={30} />
-				<p>Mens<span>'</span> Haircut</p>
+				<Link to="/" >
+					<ScissorsIcon width={30} height={30} />
+					<p>Mens<span>'</span> Haircut</p>
+				</Link>
 			</div>
 			<div className="navbar__toggle" >
-				<button onClick={
-					() => setIsOpenMenu(!isOpenMenu)
-				}>
-					<div></div>
-					<div></div>
-					<div></div>
-				</button>
+					<button onClick={
+						() => setIsOpenMenu(!isOpenMenu)
+					}>
+						<div></div>
+						<div></div>
+						<div></div>
+					</button>
 			</div>
 			<nav >
-				<ul className={isOpenMenu ? "activeMenu" : ""}>
-					<li><NavLink exact to="/" activeStyle={ activeStyles }>Home</NavLink></li>
-					<li><NavLink to="/barbers" activeStyle={ activeStyles } >Barbers</NavLink></li>
-					<li><NavLink to="/pricing"activeStyle={ activeStyles } >Pricing</NavLink></li>
-					<li><a href="/">Gallery</a></li>
-					<li><a href="/">Contact</a></li>
+				<ul className={isOpenMenu ? "activeMenu" : ""} >
+					<li><NavLink exact to="/" activeStyle={ activeStyles } onClick={() => setIsOpenMenu(!isOpenMenu)}>Home</NavLink></li>
+					<li><NavLink to="/barbers" activeStyle={ activeStyles } onClick={() => setIsOpenMenu(!isOpenMenu)} >Barbers</NavLink></li>
+					<li><NavLink to="/pricing"activeStyle={ activeStyles } onClick={() => setIsOpenMenu(!isOpenMenu)} >Pricing</NavLink></li>
+					<li><NavLink to="/gallery"activeStyle={ activeStyles } onClick={() => setIsOpenMenu(!isOpenMenu)} >Gallery</NavLink></li>
+					<li><NavLink to="/contact"activeStyle={ activeStyles } onClick={() => setIsOpenMenu(!isOpenMenu)} >Contact</NavLink></li>
 				</ul>
 			</nav>
 		</div>

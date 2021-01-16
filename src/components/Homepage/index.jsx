@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, lazy, Suspense } from 'react'
+import React, { useRef, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 // Custom
 import Button from '../shared/Button'
 import HeroSection from './HeroSection'
@@ -76,18 +77,18 @@ export default React.memo( function Homepage(){
 							value="Read more" 
 							width={ mobileScreen() ? 150 : 200 }
 						/>
-						<Button 
-							value="Contact me" 
-							width={ mobileScreen() ? 150 : 200 } 
-						/>
+						<Link to="/contact" exact >
+							<Button 
+								value="Contact me" 
+								width={ mobileScreen() ? 150 : 200 } 
+							/>
+						</Link>
 					</div>
 				</div>
-				<Suspense fallback={<p>Loading...</p>}>
 					<div className="meet-right" ref={meetRightRef}>
 						<Shader opacity={0.3}/>
 						<img src={ Hairdresser1 } alt="Hairdresser" />
 					</div>
-				</Suspense>
 			</div>
 			<div className="offer">
 				<h1>Offer</h1>
@@ -100,10 +101,12 @@ export default React.memo( function Homepage(){
 				</CardContainer>
 
 				<div className="offer-more">
-					<Button 
-						value="See more prices" 
-						width={ mobileScreen() ? 150 : 200 } 
-					/>
+					<Link to="/pricing" exact >
+						<Button 
+							value="See more prices" 
+							width={ mobileScreen() ? 150 : 200 } 
+						/>
+					</Link>
 				</div>
 			</div>
 		</>

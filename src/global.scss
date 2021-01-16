@@ -1,6 +1,5 @@
 @import "./styles/variables";
 
-*{ margin: 0; padding: 0; box-sizing: border-box; }
 
 body, html {
 	width: 100%;
@@ -29,10 +28,31 @@ p, a { color: $fColor; font-size: $fsSmall; font-weight: 300;}
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-	max-height: 400px !important;
+	transition: all .5s ease-in-out;
+	max-height: 1000px !important;
 }
 
 
 
-// animations
+*::selection 
+{
+    background-color:transparent;
+} 
+*::-moz-selection
+{
+    background-color:transparent;
+}
+*
+{        
+	margin: 0; 
+	padding: 0;
+	 box-sizing: border-box; 
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    /*IE10*/
+    -ms-user-select: none;
+    user-select: none;
+
+	// Android etc
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}    

@@ -7,7 +7,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-self: center;
-	box-shadow: inset 0 0 3px $accentColor;
+	// box-shadow: inset 0 0 5px 2px $accentColor;
+	border : 3px solid #333;
 	h2 {
 		margin-bottom: 1rem;
 		text-decoration: underline;

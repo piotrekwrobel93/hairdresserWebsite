@@ -1,5 +1,4 @@
 import './styles/advert.scss'
-// import Books from '../../images/advert/books.jpg'
 export default function Advert({title, description, width, height }) {
 
 	return(	

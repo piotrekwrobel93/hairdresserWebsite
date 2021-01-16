@@ -5,6 +5,7 @@ import animateScrollTo from 'animated-scroll-to';
 import HeroVideo from '../../../images/video/barber.mp4'
 import Shader from '../../shared/Shader'
 
+
 export default function HeroSection() {
 
 	const options = {
@@ -15,7 +16,18 @@ export default function HeroSection() {
 		cancelOnUserAction: true
 	}
 
+	const [ isMobile, setIsMobile ] = React.useState(false)
 	const scrollOffset = 1100
+
+
+
+	React.useEffect( () => {
+		if( window.innerWidth < 768 ) {
+			setIsMobile( true )
+		} else {
+			setIsMobile( false )
+		}
+	},[])
 
 
 	// JSX
@@ -33,13 +45,22 @@ export default function HeroSection() {
 			<div className="scroll-down-arrow" onClick={ () => animateScrollTo( scrollOffset, options)} >
 				<Arrow width={48} height={48} />
 			</div>
-			<div className="hero-video">
-				<Shader opacity={0.5}/>
-				<video autoPlay  muted loop id="video" width="1150">
-					<source src={HeroVideo} type="video/mp4" />
-				</video>
-				<div className="hero-video-typo">
-					<h4 style={{}}>Sundays <span>-20%</span></h4>
+			<div className="hero-video" >
+				{ isMobile ? (
+					<>
+					<Shader opacity={0.7}/>
+					<img className="mobile-hero-img" src="https://images.unsplash.com/photo-1598887143038-39282f41256a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="adv" />
+					</>
+				) : (
+					<>
+					<Shader opacity={0.4} />
+					<video playsInline autoPlay  muted loop id="video" >
+						<source src={HeroVideo} type="video/mp4" />
+					</video>
+					</>
+				)}
+				<div className="hero-video-typo" >
+					<h4 >Sundays <span>-20%</span></h4>
 					<p>Every sunday we offer discount for all Walk-ins</p>
 					<p>( student discount will not be applied )</p>
 				</div>

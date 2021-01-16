@@ -1,0 +1,129 @@
+.gallery{
+    width: 100%;
+    height: 100%;
+    margin: 5rem 0;
+    h1, p { 
+        text-align: center;
+    }
+    p {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5rem;
+    }
+
+    .gallery-grid {
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-gap: 0.5rem;
+        grid-template-areas: 'img1 img1 img2 img2 img3 img3'
+        'img1 img1 img4 img4 img5 img5'
+        'img6 img6 img4 img4 img7 img7'
+        'img6 img6 img8 img8 img9 img9'
+        'img10 img10 img11 img12 img12 img13'
+        'img10 img10 img14 img15 img15 img15'
+        ;
+        .gallery-image{
+            width: 100%;
+            max-height: 20rem;
+            position: relative;
+            overflow: hidden;
+            background-color: transparent;
+            // min-width: 30vw;
+            
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+            }
+        }
+    }
+}
+
+
+#image1{
+    grid-area: img1;
+    min-height: 40.5rem;
+}
+#image2{
+    grid-area: img2;
+}
+#image3{
+    grid-area: img3;
+}
+#image4{
+    grid-area: img4;
+    min-height: 40.5rem;
+}
+#image5{
+    grid-area: img5;
+}
+#image6{
+    grid-area: img6;
+    min-height: 40.5rem;
+}
+#image7{
+    grid-area: img7;
+}
+#image8{
+    grid-area: img8;
+}
+#image9{
+    grid-area: img9;
+}
+#image10{
+    grid-area: img10;
+}
+#image11{
+    grid-area: img11;
+}
+#image12{
+    grid-area: img12;
+}
+#image13{
+    grid-area: img13;
+}
+#image14{
+    grid-area: img14;
+}
+#image15{
+    grid-area: img15;
+}
+
+
+
+@media (max-width: 1024px ) {
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr !important;
+        grid-template-areas: 'img1 img1 img2 img2'
+                             'img3 img3 img4 img4'
+                             'img5 img5 img6 img6'
+                             'img7 img7 img8 img8'
+                             'img9 img9 img9 img9' !important;
+    }
+    .gallery-image {
+        min-height: 40.5rem;
+    }
+}
+
+
+@media ( max-width: 768px ) {
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'img1 img1 img1 img1'
+                             'img2 img2 img2 img2'
+                             'img3 img3 img3 img3'
+                             'img4 img4 img4 img4'
+                             'img5 img5 img5 img5'
+                             'img6 img6 img6 img6'
+                             'img7 img7 img7 img7'
+                             'img8 img8 img8 img8'
+                             'img9 img9 img9 img9' !important;
+    }
+    .gallery-image {
+        min-height: 10.5rem !important;
+    }
+}
