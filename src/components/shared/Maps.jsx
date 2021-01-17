@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default function Maps() {
+export default React.memo(function Maps() {
 
 	return(
 		<React.Fragment>
@@ -10,4 +10,4 @@ export default function Maps() {
 			</div>
 		</React.Fragment>
 	)
-}
+})
