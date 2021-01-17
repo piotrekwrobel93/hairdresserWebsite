@@ -1,13 +1,17 @@
 import React from 'react'
-import Arrow from '../../../icons/Arrow'
-import './herosection.scss'
 import animateScrollTo from 'animated-scroll-to';
-import HeroVideo from '../../../images/video/barber.mp4'
-import Shader from '../../shared/Shader'
 
+// ASSETS
+import HeroVideo from '../../../images/video/barber.mp4'
+import mobileImage from '../../../images/video/mobile_1.jpeg'
+import Arrow from '../../../icons/Arrow'
+import Shader from '../../shared/Shader'
+// OTHER
+import './herosection.scss'
 
 export default function HeroSection() {
 
+	// ANIMATION OPTIONS
 	const options = {
 		speed: 500,
 		minDuration: 250,
@@ -16,11 +20,12 @@ export default function HeroSection() {
 		cancelOnUserAction: true
 	}
 
+	// STATE AND VARIABLES 
 	const [ isMobile, setIsMobile ] = React.useState(false)
 	const scrollOffset = 1100
 
 
-
+	// SIDE EEFECTS 
 	React.useEffect( () => {
 		if( window.innerWidth < 768 ) {
 			setIsMobile( true )
@@ -49,7 +54,9 @@ export default function HeroSection() {
 				{ isMobile ? (
 					<>
 					<Shader opacity={0.7}/>
-					<img className="mobile-hero-img" src="https://images.unsplash.com/photo-1598887143038-39282f41256a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="adv" />
+					<img 
+						className="mobile-hero-img" 
+						src={mobileImage} alt="heroimg" />
 					</>
 				) : (
 					<>

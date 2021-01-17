@@ -1,16 +1,16 @@
 import React  from 'react'
+
 import Card from '../shared/Card'
 import CardContainer from '../shared/CardContainer'
 import Button from '../shared/Button'
-// STYLES
-import './styles/barbers.scss'
 // 
-import {animationHandler } from '../../utils'
-// Dynamic imports
 import Natalie from '../../images/barbers/natalie.webp'
 import Anna from '../../images/barbers/anna.webp'
 import Jamie from '../../images/barbers/jamie.webp'
 import Chris from '../../images/barbers/chris.webp'
+// 
+import './styles/barbers.scss'
+import { animationHandler } from '../../utils'
 
 export default function Barber() { 
 		

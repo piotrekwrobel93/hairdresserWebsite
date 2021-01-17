@@ -5,9 +5,9 @@ import './gallery.scss'
 
 export default function Gallery() {
 
+    // STATE AND VARIABLES
     const [ showGallery, setShowGallery ] = React.useState( false )
     const [ currentImg, setCurrentImg ] = React.useState('')
-
     const galleryArray = [
         { id: 1, url: 'https://images.unsplash.com/photo-1511920922889-5c35bfd95a7f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aGFpcmN1dCUyMHN0eWxlJTIwbWFsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'},
         { id: 2, url: 'https://images.unsplash.com/photo-1514336937476-a5b961020a5c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpcmN1dCUyMHN0eWxlJTIwbWFsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'},
@@ -27,26 +27,28 @@ export default function Gallery() {
     ]
 
 
+    // METHODS
     const handleAnimation = node => {
-        setShowGallery( true)
+        setShowGallery( true )
         setCurrentImg( node )
     }
 
+
+    // SIDE EFFECTS
     useEffect( () => {
-      
         if( showGallery ) {
             document.body.style.overflow = "hidden"
         } else {
             document.body.style.overflow = "auto"
         }
-    },[ showGallery ,currentImg])
+    },[ showGallery])
 
 
+    // JSX
     return (
         <div className="gallery">
             <h1>See some of our Art!</h1>
             <p>Be part of it</p>
-
             <div className="gallery-grid">
                 {
                     galleryArray.map( (image, index) => (

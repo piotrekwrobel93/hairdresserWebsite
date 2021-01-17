@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import '../../styles/footer.scss'
 import Scissors from '../../icons/Scissors'
 import Phone from '../..//icons/Phone'
@@ -6,7 +6,8 @@ import Mail from '../..//icons/Mail'
 import Location from '../..//icons/Location'
 import  Facebook from '../../icons/Facebook'
 import  Instagram from '../../icons/Instagram'
-import Maps from '../shared/Maps'
+// import Maps from '../shared/Maps'
+const Maps = lazy( () => import('../../components/shared/Maps'))
 
 export default  React.memo( function Footer() {
 
@@ -46,7 +47,9 @@ export default  React.memo( function Footer() {
 			</div>
 			<div className="footer__maps">
 				<div className="google-maps">
-					<Maps />
+					<Suspense fallback={<p>Loading</p>}>
+						<Maps />
+					</Suspense>
 				</div>
 			</div>
 			<div className="footer__bottom">

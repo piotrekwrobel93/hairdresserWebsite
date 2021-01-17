@@ -12,7 +12,11 @@
 	z-index: 99;
 	cursor: pointer;
 	overflow: hidden;
-
+	
+	&:disabled {
+		background-color: #999;
+		color: #fff;
+	}
 
 
 	&:nth-child(1) { margin-right: 1rem; }
@@ -29,7 +33,7 @@
 		transition: all .3s cubic-bezier(.72,.69,0,.61);
 	}
 
-	&:hover::after {
+	&:hover:enabled:after {
 		top: -50%;
 	}
 
@@ -49,7 +53,7 @@
 		visibility: hidden;
 		transition: all .1s ease-in;
 	}
-	&:hover::before{
+	&:hover:enabled::before{
 		top: 50%;
 		transform: translateY(-50%);
 		visibility: visible;

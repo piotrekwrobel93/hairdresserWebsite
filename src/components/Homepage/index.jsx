@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // Custom
 import Button from '../shared/Button'
 import HeroSection from './HeroSection'
@@ -12,17 +12,20 @@ import HaircutServiceImage from '../../images/haircut.webp'
 import BeardServiceimage from '../../images/beard.webp'
 import WashServiceimage from '../../images/hairwash.webp'
 import HotTowelServiceimage from '../../images/hottowel.webp'
-
-// 
+// resized image_small for mobile
+import BeardServiceimageSmall from '../../images/beard_small.webp'
+import HaircutServiceimageSmall from '../../images/haircut_small.webp'
+import HaircutServiceImageSmall from '../../images/hairwash_small.webp'
+import HotTowelServiceimageSmall from '../../images/hottowel_small.webp'
+// OTHER
 import { animationHandler } from '../../utils'
-// 
 import './homepage.scss'
 
 
 
 
 // JSX
-export default React.memo( function Homepage(){
+export default function HomePage(){
 
 	// ANIMATION REFS
 	const meetLeftRef = useRef( null )
@@ -31,6 +34,8 @@ export default React.memo( function Homepage(){
 	const meetRightRef = useRef( null )
 	const meetRightRef2 = useRef( null )
 	const meetRightRef3 = useRef( null )
+	// STATE AND VARIABLES
+	const boolean = true 
 
 	// ARRAY TO LOOP THROUGH AND ADD SCROLL TRIGGER
 	const leftAnimationsRefsArray = [
@@ -45,16 +50,13 @@ export default React.memo( function Homepage(){
 		meetRightRef3,
 	]
 
-
 	// METHODS
 	const mobileScreen = () => {
 		if (window.innerWidth <= 568 ) return true
 	}
 
-
-	const boolean = true 
-
-
+	
+	// SIDE EFFECTS
 	useEffect( () => {
 		animationHandler.left( leftAnimationsRefsArray, boolean )
 		animationHandler.right( rightAnimationsRefArray, boolean )
@@ -77,7 +79,7 @@ export default React.memo( function Homepage(){
 							value="Read more" 
 							width={ mobileScreen() ? 150 : 200 }
 						/>
-						<Link to="/contact" exact >
+						<Link to="/contact" >
 							<Button 
 								value="Contact me" 
 								width={ mobileScreen() ? 150 : 200 } 
@@ -94,14 +96,13 @@ export default React.memo( function Homepage(){
 				<h1>Offer</h1>
 				<p>Discover our service</p>
 				<CardContainer>
-					<Card image={HaircutServiceImage} service="haircut" price="£22-50" reff={meetLeftRef2} />
-					<Card image={BeardServiceimage} service="beard trim" price="£22-50" reff={meetRightRef2} />
-					<Card image={WashServiceimage} service="wash & style" price="£22-50"  reff={meetLeftRef3} />
-					<Card image={HotTowelServiceimage} service="hot towel shave" price="£22-50" reff={meetRightRef3} />
+					<Card image={HaircutServiceImage} service="haircut" price="£22-50" reff={meetLeftRef2}  srcSet={` ${HaircutServiceImage} 1200w , ${HaircutServiceimageSmall} 700w `} />
+					<Card image={BeardServiceimage} service="beard trim" price="£22-50" reff={meetRightRef2} srcSet={` ${BeardServiceimage} 1200w , ${BeardServiceimageSmall} 700w `} />
+					<Card image={WashServiceimage} service="wash & style" price="£22-50"  reff={meetLeftRef3}  srcSet={` ${HaircutServiceImage} 1200w , ${HaircutServiceImageSmall} 700w `} />
+					<Card image={HotTowelServiceimage} service="hot towel shave" price="£22-50" reff={meetRightRef3} srcSet={` ${HotTowelServiceimage} 1200w , ${HotTowelServiceimageSmall} 700w `} />
 				</CardContainer>
-
 				<div className="offer-more">
-					<Link to="/pricing" exact >
+					<Link to="/pricing" >
 						<Button 
 							value="See more prices" 
 							width={ mobileScreen() ? 150 : 200 } 
@@ -111,4 +112,4 @@ export default React.memo( function Homepage(){
 			</div>
 		</>
 	)
-})
+}
