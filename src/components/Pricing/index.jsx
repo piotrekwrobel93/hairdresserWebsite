@@ -5,10 +5,11 @@ import './pricing.scss'
 import Row from '../shared/Row'
 import Button from '../shared/Button'
 import Advert from '../shared/Advert'
+import {BookingContext} from '../../context/context'
 
 export default React.memo( function Pricing() {
 
-
+	const { setShowBooking } = React.useContext( BookingContext )
 
 	const haircutServices = [
 		{ id: 1, service: "Haircut", duration: 30,  price: 30 },
@@ -40,6 +41,11 @@ export default React.memo( function Pricing() {
 		{ id: 4, service: "Fashion + Shaving Lessons", duration: 60, price: 100 },
 	]
 
+
+	const handleClick = event => {
+		event.preventDefault()
+		setShowBooking(true)
+	}
 	// JSX
 
 	return(
@@ -90,7 +96,7 @@ export default React.memo( function Pricing() {
 					}
 				</div>
 				<div className="pricing--button">
-					<Button value="Book an apointment" width={200} height={50} />
+					<Button value="Book an apointment" width={200} height={50} onClick={handleClick} />
 				</div>
 			</div>
 		</div>

@@ -1,12 +1,16 @@
 import React from 'react'
 import '../../styles/navbar.scss'
 import ScissorsIcon from '../../icons/Scissors'
+import { isMobile } from '../../utils'
+import { BookingContext } from '../../context/context'
+
 // Route Link
 import { NavLink, Link, useLocation } from 'react-router-dom'
 
 
 export default React.memo(function Navbar() {
 
+	const {setShowBooking} = React.useContext(BookingContext)
 	const [ isOpenMenu, setIsOpenMenu ] = React.useState( false )
 	const [ isHome, setIsHome ] = React.useState( false )
 	let location = useLocation()
@@ -62,6 +66,8 @@ export default React.memo(function Navbar() {
 						<li><NavLink to="/pricing"activeStyle={ activeStyles } onClick={() => setIsOpenMenu(!isOpenMenu)} >Pricing</NavLink></li>
 						<li><NavLink to="/gallery"activeStyle={ activeStyles } onClick={() => setIsOpenMenu(!isOpenMenu)} >Gallery</NavLink></li>
 						<li><NavLink to="/contact"activeStyle={ activeStyles } onClick={() => setIsOpenMenu(!isOpenMenu)} >Contact</NavLink></li>
+						{ isMobile && <li><NavLink to="#" onClick={() => { setIsOpenMenu(!isOpenMenu); setShowBooking(true) }} >Booking</NavLink></li>}
+
 					</ul>
 				</nav>
 		</div>

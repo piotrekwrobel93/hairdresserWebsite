@@ -13,7 +13,7 @@ $pageMargin: 20%;
 // Global Colours
 $fColor: #222;
 $fColor2: #777;
-$accentColor: red;
+$accentColor: rgb(255, 37, 37);
 
 
 // Transitions
@@ -26,7 +26,6 @@ $hoverTransition: all 0.1s ease-in-out;
 // Mixins 
 @mixin hoverEffectText {
 	color: $accentColor;
-	// border-bottom: 1px solid #000 !important;
 }
 
 @mixin headers {

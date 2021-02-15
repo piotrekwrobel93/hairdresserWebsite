@@ -5,6 +5,8 @@ import {
 	Switch,
 } from 'react-router-dom'
 
+import BookingContextProvider from './context/context'
+
 // Components
 import HomePage from './components/Homepage'
 import Layout from './components/layout'
@@ -17,7 +19,8 @@ const App = () => {
 
 	// JSX
 	return (
-		<Router>
+	<Router>
+		<BookingContextProvider>
 			<div className="app" >
 				<Layout>
 					<Switch>
@@ -29,7 +32,8 @@ const App = () => {
 					</Switch>
 				</Layout>
 			</div>
-		</Router>
+		</BookingContextProvider>
+	</Router>
 	)
 }
 

@@ -24,15 +24,18 @@ a { text-decoration: none; }
 p, a { color: $fColor; font-size: $fsSmall; font-weight: 300;}
 
 .activeMenu {
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	// transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 	max-height: 500px !important;
 }
 
-
+.current-time {
+	background-color: red !important;
+	color: #fff !important;
+}
 
 *::selection 
 {

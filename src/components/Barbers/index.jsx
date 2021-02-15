@@ -11,6 +11,7 @@ import Chris from '../../images/barbers/chris.webp'
 // 
 import './styles/barbers.scss'
 import { animationHandler } from '../../utils'
+import { Link } from 'react-router-dom'
 
 export default function Barber() { 
 		
@@ -48,7 +49,9 @@ export default function Barber() {
 				</CardContainer>
 			</div>
 			<div className="barber__button">
-				<Button width={200} height={50} value="Book an apointment" />
+				<Link to="/contact" >
+					<Button width={200} height={50} value="Contact Us" />
+				</Link>
 			</div>
 		</div>
 	)
