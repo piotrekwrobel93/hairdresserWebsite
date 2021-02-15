@@ -24,7 +24,7 @@ export default function BookingSystem() {
     const [ formError, setFormError ] = React.useState('')
     const [ isAvailableDate, setIsAvailableDate ] = React.useState(false)
     const [ selectedTime, setSelectedTime ] = React.useState()
-    const [ hasCompletedBooking, setHasCompletedBooking ] = React.useState( JSON.parse(localStorage.getItem("token")) || false )
+    const [ hasCompletedBooking ] = React.useState( JSON.parse(localStorage.getItem("token")) || false )
     //
     const { showBooking, setShowBooking, setShowBookingIcon } = React.useContext(BookingContext)
     const timesRef = React.useRef(null)
@@ -40,7 +40,7 @@ export default function BookingSystem() {
     const validateStage = stage => {
         if (stage === 1) {
             const nameRegEx = new RegExp("^[a-zA-Z]+$")
-            const emailRegEx = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
+            const emailRegEx = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
             const contactRegEx = new RegExp('^[0-9]')
             // NAME VALIDATION
             if (!name || name.length < 3 ) {
