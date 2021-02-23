@@ -150,7 +150,6 @@ export default function BookingSystem() {
                                                 <div className="booking-form-2">
                                                     <p>Select Date</p>
                                                     <div className="d-p">
-                                                        {/* { window.innerHeight < } */}
                                                         <DatePicker selected={date} onChange={prev => setDate(prev)} dateFormat='dd/MM/yyyy' onSelect={handleSelect}/>
                                                     </div>
                                                     <>
