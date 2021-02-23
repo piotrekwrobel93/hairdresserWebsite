@@ -34,7 +34,7 @@ export default  React.memo( function Footer() {
 					<Mail width={50} height={50}/>
 					<div>
 						<h4>E-mail</h4>
-						<p>contact@manshaircut@stylist.co.uk</p>
+						<p>contact.manshaircut@stylist.co.uk</p>
 					</div>
 				</div>
 				<div>

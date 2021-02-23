@@ -7,6 +7,7 @@ import mobileImage from '../../../images/video/mobile_1.jpeg'
 import Arrow from '../../../icons/Arrow'
 import Shader from '../../shared/Shader'
 // OTHER
+import {Link} from 'react-router-dom'
 import './herosection.scss'
 
 export default function HeroSection() {
@@ -39,12 +40,11 @@ export default function HeroSection() {
 	return(
 		<div className="hero">
 			<h1>Proffesional Haircut & Beard Trimming</h1>
-			<p><a href="/">See Our Great Offers</a></p>
+			<p><Link to="/pricing">See Our Great Offers</Link></p>
 			<div className="hero-paragraph">
 				<p>
-					We have been working on hair styling for 11 years . So far I have attended
-					a lot of seminars and hairdresser development workshops. You will definitely appreciate
-					my creativity and imagination. I offer a range of men's and women's haircuts and hairdressing.
+				We have been working on hair styling for 11 years. So far we have attended a lot of seminars and hairdresser development workshops. 
+				You will definitely appreciate our creativity, imagination and passion. We offer a range of men's and women's haircuts and hairdressing.
 				</p>
 			</div>
 			<div className="scroll-down-arrow" onClick={ () => animateScrollTo( scrollOffset, options)} >

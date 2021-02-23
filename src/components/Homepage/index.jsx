@@ -72,8 +72,7 @@ export default function HomePage(){
 					<h1>Meet Us</h1>
 					<h4>and my passion</h4>
 					<p>
-						I have been working on hair styling for 2 years in Aberdeeen.I use only professional and brand products Wella in my salon. Haircuts, blow dry,colouring, hairstyling,full head tint, highlights are performed in Passion for Beauty at 76 Rosemount Viaduct, AB25 1NU Aberdeen. We will supply you with wonderful atmosphere. My partner Lucy will take professional care of your nails, eyebrows and eyelashes.While listening to relaxing music and having a nice cup of coffee you will relax and feel wonderful, I would say " You will be over the moon."I would like to invite you to my beauty salon. I will give you free advice about your hair.
-					</p>
+					We've been working on hair styling for 2 years in the UK. We use only professional and brand products Wella in our salon. Haircuts, blow dry, coloring, hair styling, full head tint, highlights are performed in Passion for Beauty. We will supply you with a wonderful atmosphere. Our colleague Lucy will take professional care of your nails, eyebrows, and eyelashes. While listening to relaxing music and having a nice cup of coffee you will relax and feel wonderful also give you free advice about your hair.					</p>
 					<div className="meet-left-buttons">
 						<Link to="/gallery" >
 							<Button 

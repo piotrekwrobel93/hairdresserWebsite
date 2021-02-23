@@ -38,7 +38,7 @@ export default function Contact() {
         <div className="contact">
             { showModal && <Modal />}
             <h1>Write to us</h1>
-            <p>We’re here to help and answer any question you might have. We look forward to hearing from you</p>
+            <p>We’re here to help and answer any questions you might have. We look forward to hearing from you.</p>
             <div className="contact-form">
                 <form onSubmit={handleSubmit} ref={formRef}>
                     <div className="form-inputs">

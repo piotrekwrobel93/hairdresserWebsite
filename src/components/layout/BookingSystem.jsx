@@ -120,9 +120,9 @@ export default function BookingSystem() {
         <>
             {showBooking &&  (
                 <div className="booking-system">
-                    <div className="booking-exit-icon"><ExitIcon width={20} height={20} /> </div>
                     <div className="booking-trigger" onClick={ () => setShowBooking(!showBooking)}></div>
                     <div className="booking">
+                        <div className="booking-exit-icon" onClick={() => setShowBooking(!showBooking)}><ExitIcon width={25} height={25} fill="#000"/> </div>
                         <div className="booking-header">
                         <span className="form-error">{formError}</span>
                             <ScissorsIcon width={30} height={30} fill="red" />
